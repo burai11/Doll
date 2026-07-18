@@ -1,0 +1,29 @@
+[
+  { "id": "bra_pink",         "name": "ピンクブラ",     "category": "bra",   "image": "images/bra_pink.png",         "layer": "underwear", "tags": ["pink"] },
+  { "id": "bra_white",        "name": "白ブラ",         "category": "bra",   "image": "images/bra_white.png",        "layer": "underwear", "tags": ["white"] },
+
+  { "id": "pants_pink",       "name": "ピンクパンツ",   "category": "pants", "image": "images/pants_pink.png",       "layer": "underwear", "tags": ["pink"] },
+  { "id": "pants_white",      "name": "白パンツ",       "category": "pants", "image": "images/pants_white.png",      "layer": "underwear", "tags": ["white"] },
+
+  { "id": "socks_white",      "name": "白ソックス",     "category": "socks", "image": "images/socks_white.png",      "layer": "underwear", "tags": ["white"] },
+  { "id": "socks_black",      "name": "黒ソックス",     "category": "socks", "image": "images/socks_black.png",      "layer": "underwear", "tags": ["black"] },
+
+  { "id": "shoes_red",        "name": "赤い靴",         "category": "shoes", "image": "images/shoes_red.png",        "layer": "costume",   "tags": ["red"] },
+  { "id": "shoes_white",      "name": "白い靴",         "category": "shoes", "image": "images/shoes_white.png",      "layer": "costume",   "tags": ["white"] },
+
+  { "id": "skirt_blue",       "name": "青スカート",     "category": "skirt", "image": "images/skirt_blue.png",       "layer": "costume",   "tags": ["blue"] },
+  { "id": "skirt_red",        "name": "赤スカート",     "category": "skirt", "image": "images/skirt_red.png",        "layer": "costume",   "tags": ["red"] },
+
+  { "id": "zubon_navy",       "name": "ネイビーズボン", "category": "zubon", "image": "images/zubon_navy.png",       "layer": "costume",   "tags": ["navy"] },
+
+  { "id": "tops_white_shirt", "name": "白シャツ",       "category": "tops",  "image": "images/tops_white_shirt.png", "layer": "costume",   "tags": ["white", "shirt"] },
+  { "id": "tops_sailor",      "name": "セーラー服",     "category": "tops",  "image": "images/tops_sailor.png",      "layer": "costume",   "tags": ["sailor"] },
+
+  { "id": "outer_cardigan",   "name": "カーディガン",   "category": "outer", "image": "images/outer_cardigan.png",   "layer": "outerwear", "tags": ["beige"] },
+
+  { "id": "hat_beret",        "name": "ベレー帽",       "category": "hat",   "image": "images/hat_beret.png",        "layer": "accessory", "tags": ["red"] },
+
+  { "id": "neck_ribbon",      "name": "リボン",         "category": "neck",  "image": "images/neck_ribbon.png",      "layer": "accessory", "tags": ["ribbon"] },
+
+  { "id": "hand_bracelet",    "name": "ブレスレット",   "category": "hand",  "image": "images/hand_bracelet.png",    "layer": "accessory", "tags": ["gold"] }
+]

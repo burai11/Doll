@@ -1,0 +1,10 @@
+{
+  "default": "character_a",
+  "characters": [
+    {
+      "id": "character_a",
+      "name": "蕨",
+      "path": "characters/character_a/"
+    }
+  ]
+}
