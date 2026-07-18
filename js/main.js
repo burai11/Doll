@@ -1,35 +1,33 @@
-/**
- * main.js
- * アプリの初期化を担当する。
- */
 (async () => {
   const loadingEl = document.getElementById("loading");
   const canvas = document.getElementById("character-canvas");
-
-  try {
-    // キャラクター一覧からデフォルトキャラクターを決定
-    const list = await DataLoader.loadJSON("characters/characters.json");
-    const entry =
-      list.characters.find((c) => c.id === list.default) ?? list.characters[0];
-
-    // キャラクター一式を読み込み
-    const character = await DataLoader.loadCharacter(entry.path);
-
-    // 各モジュールを初期化
-    Renderer.init(canvas, character);
-    Studio.init(canvas);
-    Wardrobe.init(character, (selections) => Renderer.render(selections));
-
-    // 初回描画
-    await Renderer.render(Wardrobe.getSelections());
-
-    loadingEl.classList.add("hidden");
-  } catch (err) {
-    console.error(err);
+  const selectEl = document.getElementById("character-select");
+  function showError(error) {
+    console.error(error);
     loadingEl.classList.add("error");
-    loadingEl.textContent =
-      "読み込みに失敗しました。\n" +
-      "ローカルで開く場合はサーバー経由で起動してください。\n" +
-      "（詳細はREADME.mdを参照）";
+    loadingEl.textContent = "Could not load the game. Open it through a local server.";
+  }
+  try {
+    const list = await DataLoader.loadJSON("characters/characters.json");
+    for (const entry of list.characters) {
+      const option = document.createElement("option");
+      option.value = entry.id;
+      option.textContent = entry.name;
+      selectEl.appendChild(option);
+    }
+    async function selectCharacter(id) {
+      const entry = list.characters.find((candidate) => candidate.id === id) ?? list.characters[0];
+      selectEl.value = entry.id;
+      const character = await DataLoader.loadCharacter(entry.path);
+      Renderer.init(canvas, character);
+      Wardrobe.init(character, (selections) => Renderer.render(selections));
+      await Renderer.render(Wardrobe.getSelections());
+    }
+    selectEl.addEventListener("change", () => selectCharacter(selectEl.value).catch(showError));
+    Studio.init(canvas);
+    await selectCharacter(list.default);
+    loadingEl.classList.add("hidden");
+  } catch (error) {
+    showError(error);
   }
 })();

@@ -1,10 +1,7 @@
 {
   "default": "character_a",
   "characters": [
-    {
-      "id": "character_a",
-      "name": "蕨",
-      "path": "characters/character_a/"
-    }
+    { "id": "character_a", "name": "Warabi", "path": "characters/character_a/" },
+    { "id": "maiba_kirie", "name": "Maiba Kirie", "path": "characters/maiba_kirie/" }
   ]
 }

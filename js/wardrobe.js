@@ -1,14 +1,8 @@
-/**
- * wardrobe.js
- * 着せ替えUIを担当する。
- * カテゴリタブと衣装一覧をJSONデータから自動生成する。
- */
 const Wardrobe = (() => {
   let character = null;
-  let selections = new Map(); // カテゴリID → 選択中アイテム
+  let selections = new Map();
   let activeCategory = null;
   let onChange = null;
-
   const tabsEl = document.getElementById("category-tabs");
   const listEl = document.getElementById("item-list");
 
@@ -16,52 +10,31 @@ const Wardrobe = (() => {
     character = characterData;
     onChange = changeCallback;
     selections = new Map();
-
-    applyDefaultOutfit();
-    buildTabs();
-    selectCategory(character.def.categories[0]?.id ?? null);
-  }
-
-  function applyDefaultOutfit() {
-    const outfit = character.def.defaultOutfit ?? {};
-    for (const [categoryId, itemId] of Object.entries(outfit)) {
-      const item = character.items.find((i) => i.id === itemId);
+    for (const [categoryId, itemId] of Object.entries(character.def.defaultOutfit ?? {})) {
+      const item = character.items.find((candidate) => candidate.id === itemId);
       if (item) selections.set(categoryId, item);
     }
-  }
-
-  function buildTabs() {
     tabsEl.innerHTML = "";
-    for (const cat of character.def.categories) {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "category-tab";
-      btn.textContent = cat.name;
-      btn.dataset.category = cat.id;
-      btn.addEventListener("click", () => selectCategory(cat.id));
-      tabsEl.appendChild(btn);
+    for (const category of character.def.categories) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "category-tab";
+      button.textContent = category.name;
+      button.dataset.category = category.id;
+      button.addEventListener("click", () => selectCategory(category.id));
+      tabsEl.appendChild(button);
     }
+    selectCategory(character.def.categories[0]?.id ?? null);
   }
 
   function selectCategory(categoryId) {
     activeCategory = categoryId;
-    for (const btn of tabsEl.children) {
-      btn.classList.toggle("active", btn.dataset.category === categoryId);
-    }
-    buildItemList();
-  }
-
-  function buildItemList() {
+    for (const button of tabsEl.children) button.classList.toggle("active", button.dataset.category === categoryId);
     listEl.innerHTML = "";
     if (!activeCategory) return;
-
-    const cat = character.def.categories.find((c) => c.id === activeCategory);
-    const items = character.items.filter((i) => i.category === activeCategory);
-
-    if (cat?.allowNone) {
-      listEl.appendChild(createNoneCard());
-    }
-    for (const item of items) {
+    const category = character.def.categories.find((candidate) => candidate.id === activeCategory);
+    if (category?.allowNone) listEl.appendChild(createNoneCard());
+    for (const item of character.items.filter((candidate) => candidate.category === activeCategory)) {
       listEl.appendChild(createItemCard(item));
     }
     updateSelectedState();
@@ -72,16 +45,7 @@ const Wardrobe = (() => {
     card.type = "button";
     card.className = "item-card";
     card.dataset.itemId = "";
-
-    const thumb = document.createElement("div");
-    thumb.className = "item-thumb none";
-    thumb.textContent = "×";
-
-    const name = document.createElement("div");
-    name.className = "item-name";
-    name.textContent = "なし";
-
-    card.append(thumb, name);
+    card.innerHTML = '<div class="item-thumb none">X</div><div class="item-name">None</div>';
     card.addEventListener("click", () => selectItem(null));
     return card;
   }
@@ -91,42 +55,30 @@ const Wardrobe = (() => {
     card.type = "button";
     card.className = "item-card";
     card.dataset.itemId = item.id;
-
     const thumb = document.createElement("img");
     thumb.className = "item-thumb";
     thumb.src = character.basePath + item.image;
     thumb.alt = item.name;
-    thumb.loading = "lazy";
-
     const name = document.createElement("div");
     name.className = "item-name";
     name.textContent = item.name;
-
     card.append(thumb, name);
     card.addEventListener("click", () => selectItem(item));
     return card;
   }
 
   function selectItem(item) {
-    if (item === null) {
-      selections.delete(activeCategory);
-    } else {
-      selections.set(activeCategory, item);
-    }
+    if (item) selections.set(activeCategory, item);
+    else selections.delete(activeCategory);
     updateSelectedState();
     onChange?.(selections);
   }
 
   function updateSelectedState() {
     const selectedId = selections.get(activeCategory)?.id ?? "";
-    for (const card of listEl.children) {
-      card.classList.toggle("selected", card.dataset.itemId === selectedId);
-    }
+    for (const card of listEl.children) card.classList.toggle("selected", card.dataset.itemId === selectedId);
   }
 
-  function getSelections() {
-    return selections;
-  }
-
+  function getSelections() { return selections; }
   return { init, getSelections };
 })();

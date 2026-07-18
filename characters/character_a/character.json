@@ -1,49 +1,27 @@
 {
   "id": "character_a",
-  "name": "蕨",
+  "name": "Warabi",
   "canvas": { "width": 1024, "height": 1536 },
-
-  "layers": [
-    "background",
-    "hair_back",
-    "body",
-    "underwear",
-    "costume",
-    "outerwear",
-    "accessory",
-    "hair_front",
-    "effect"
-  ],
-
+  "layers": ["background", "hair_back", "body", "underwear", "costume", "outerwear", "accessory", "hair_front", "effect"],
   "base": [
     { "image": "images/bg_default.png", "layer": "background" },
-    { "image": "images/hair_back.png",  "layer": "hair_back" },
-    { "image": "images/body.png",       "layer": "body" },
+    { "image": "images/hair_back.png", "layer": "hair_back" },
+    { "image": "images/body.png", "layer": "body" },
     { "image": "images/hair_front.png", "layer": "hair_front" }
   ],
-
   "categories": [
-    { "id": "bra",      "name": "ブラ",     "allowNone": true },
-    { "id": "pants",    "name": "パンツ",   "allowNone": true },
-    { "id": "socks",    "name": "靴下",     "allowNone": true },
-    { "id": "shoes",    "name": "靴",       "allowNone": true },
-    { "id": "skirt",    "name": "スカート", "allowNone": true },
-    { "id": "zubon",    "name": "ズボン",   "allowNone": true },
-    { "id": "tops",     "name": "トップス", "allowNone": true },
-    { "id": "outer",    "name": "アウター", "allowNone": true },
-    { "id": "hat",      "name": "帽子",     "allowNone": true },
-    { "id": "neck",     "name": "首アクセ", "allowNone": true },
-    { "id": "hand",     "name": "手アクセ", "allowNone": true }
+    { "id": "bra", "name": "Bra", "allowNone": true },
+    { "id": "pants", "name": "Underwear", "allowNone": true },
+    { "id": "socks", "name": "Socks", "allowNone": true },
+    { "id": "shoes", "name": "Shoes", "allowNone": true },
+    { "id": "skirt", "name": "Skirt", "allowNone": true },
+    { "id": "zubon", "name": "Pants", "allowNone": true },
+    { "id": "tops", "name": "Tops", "allowNone": true },
+    { "id": "outer", "name": "Outer", "allowNone": true },
+    { "id": "hat", "name": "Hat", "allowNone": true },
+    { "id": "neck", "name": "Neck", "allowNone": true },
+    { "id": "hand", "name": "Hand", "allowNone": true }
   ],
-
   "items": "items.json",
-
-  "defaultOutfit": {
-    "bra": "bra_pink",
-    "pants": "pants_pink",
-    "socks": "socks_white",
-    "shoes": "shoes_red",
-    "skirt": "skirt_blue",
-    "tops": "tops_white_shirt"
-  }
+  "defaultOutfit": { "bra": "bra_pink", "pants": "pants_pink", "socks": "socks_white", "shoes": "shoes_red", "skirt": "skirt_blue", "tops": "tops_white_shirt" }
 }

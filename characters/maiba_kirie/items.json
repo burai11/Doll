@@ -1,0 +1,7 @@
+[
+  { "id": "kirie_default", "name": "Default", "category": "portrait", "image": "images/kirie_default.png", "layer": "portrait", "tags": ["default"] },
+  { "id": "kirie_variant", "name": "Variant", "category": "portrait", "image": "images/kirie_variant.png", "layer": "portrait", "tags": ["variant"] },
+  { "id": "bra_black", "name": "Black Bra", "category": "bra", "image": "images/bra_black.jpg", "layer": "underwear", "removeWhiteBackground": true, "tags": ["black"] },
+  { "id": "pants_black", "name": "Black Underwear", "category": "pants", "image": "images/pants_black.jpg", "layer": "underwear", "removeWhiteBackground": true, "tags": ["black"] },
+  { "id": "dress_pink", "name": "Pink Dress", "category": "dress", "image": "images/dress_pink.jpg", "layer": "costume", "removeWhiteBackground": true, "tags": ["pink", "dress"] }
+]
