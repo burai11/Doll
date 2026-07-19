@@ -9,28 +9,38 @@
 <body>
   <main id="stage">
     <canvas id="character-canvas"></canvas>
-    <header id="app-header">
-      <h1 id="app-title">studio_<span>warabi</span></h1>
-      <div class="header-actions">
-        <label class="character-select-label" for="character-select">Character</label>
-        <select id="character-select" aria-label="Character"></select>
-        <button id="btn-studio" class="icon-btn" type="button" aria-label="Open studio mode">Camera</button>
-      </div>
-    </header>
+    <button id="drawer-toggle" class="icon-btn" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">☰</button>
     <div id="studio-controls" hidden>
       <button id="btn-studio-exit" class="studio-btn" type="button">Back</button>
-      <button id="btn-save" class="studio-btn primary" type="button">Save PNG</button>
+      <button class="studio-btn primary js-save" type="button">Save PNG</button>
     </div>
   </main>
-  <section id="wardrobe" aria-label="Wardrobe">
+
+  <div id="scrim"></div>
+
+  <aside id="drawer" aria-label="Wardrobe panel">
+    <div id="drawer-header">
+      <h1 id="app-title">studio_<span>warabi</span></h1>
+      <button id="drawer-close" class="icon-btn" type="button" aria-label="Close menu">✕</button>
+    </div>
+    <div id="drawer-charselect">
+      <label class="character-select-label" for="character-select">Character</label>
+      <select id="character-select" aria-label="Character"></select>
+    </div>
     <nav id="category-tabs" aria-label="Categories"></nav>
     <div id="item-list" role="listbox" aria-label="Items"></div>
-  </section>
+    <div id="drawer-actions">
+      <button id="btn-studio" class="studio-btn" type="button">Camera</button>
+      <button id="btn-save" class="studio-btn primary js-save" type="button">Save PNG</button>
+    </div>
+  </aside>
+
   <div id="loading">Loading...</div>
   <script src="js/dataLoader.js"></script>
   <script src="js/renderer.js"></script>
   <script src="js/wardrobe.js"></script>
   <script src="js/studio.js"></script>
+  <script src="js/drawer.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

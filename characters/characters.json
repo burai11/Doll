@@ -2,6 +2,7 @@
   "default": "character_a",
   "characters": [
     { "id": "character_a", "name": "Warabi", "path": "characters/character_a/" },
-    { "id": "maiba_kirie", "name": "Maiba Kirie", "path": "characters/maiba_kirie/" }
+    { "id": "maiba_kirie", "name": "Maiba Kirie", "path": "characters/maiba_kirie/" },
+    { "id": "ayase_emi", "name": "Ayase Emi", "path": "characters/ayase_emi/" }
   ]
 }

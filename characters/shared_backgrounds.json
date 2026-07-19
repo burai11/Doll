@@ -1,0 +1,11 @@
+[
+  { "id": "bg_classroom_day", "name": "Classroom (Day)", "image": "bg_classroom_day.jpg", "tags": ["classroom", "day"] },
+  { "id": "bg_classroom_evening", "name": "Classroom (Evening)", "image": "bg_classroom_evening.jpg", "tags": ["classroom", "evening"] },
+  { "id": "bg_locker_room", "name": "Locker Room", "image": "bg_locker_room.jpg", "tags": ["locker"] },
+  { "id": "bg_poolside", "name": "Poolside", "image": "bg_poolside.jpg", "tags": ["pool"] },
+  { "id": "bg_beach", "name": "Beach", "image": "bg_beach.jpg", "tags": ["beach"] },
+  { "id": "bg_hotel_room", "name": "Hotel Room", "image": "bg_hotel_room.jpg", "tags": ["hotel"] },
+  { "id": "bg_hotel_exterior", "name": "Hotel Exterior", "image": "bg_hotel_exterior.jpg", "tags": ["hotel"] },
+  { "id": "bg_night_bar", "name": "Night Bar", "image": "bg_night_bar.jpg", "tags": ["night"] },
+  { "id": "bg_night_city", "name": "Night City", "image": "bg_night_city.jpg", "tags": ["night", "city"] }
+]

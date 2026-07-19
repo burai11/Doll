@@ -1,9 +1,9 @@
 {
-  "id": "maiba_kirie",
-  "name": "Maiba Kirie",
+  "id": "ayase_emi",
+  "name": "Ayase Emi",
   "canvas": { "width": 768, "height": 1280 },
   "sharedBackgrounds": true,
-  "layers": ["portrait", "underwear", "legwear", "costume", "outerwear", "armsFront", "headwear"],
+  "layers": ["portrait", "underwear", "legwear", "costume", "outerwear", "headwear"],
   "base": [],
   "categories": [
     { "id": "portrait", "name": "Portrait", "allowNone": false },
@@ -14,15 +14,10 @@
     { "id": "tops", "name": "Tops", "allowNone": true },
     { "id": "dress", "name": "Dress", "allowNone": true },
     { "id": "outer", "name": "Outer", "allowNone": true },
-    { "id": "hat", "name": "Hat", "allowNone": true },
-    { "id": "armOverlay", "name": "Arms", "allowNone": true }
+    { "id": "hat", "name": "Hat", "allowNone": true }
   ],
   "items": "items.json",
   "defaultOutfit": {
-    "portrait": "kirie_default",
-    "bra": "bra_black",
-    "pants": "pants_black",
-    "dress": "dress_pink",
-    "armOverlay": "arms_front"
+    "portrait": "ayase_emi_default"
   }
 }

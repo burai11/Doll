@@ -2,6 +2,7 @@
   "id": "character_a",
   "name": "Warabi",
   "canvas": { "width": 1024, "height": 1536 },
+  "sharedBackgrounds": true,
   "layers": ["background", "hair_back", "body", "underwear", "costume", "outerwear", "accessory", "hair_front", "effect"],
   "base": [
     { "image": "images/bg_default.png", "layer": "background" },
