@@ -20,18 +20,30 @@ const Renderer = (() => {
   }
 
   function buildDrawList(selections) {
-    const entries = character.def.base.map((base) => ({
-      image: base.image,
-      layer: layerIndex(base.layer),
-      sub: -1,
-      removeWhiteBackground: false
-    }));
+    const hiddenLayers = new Set();
+    for (const item of selections.values()) {
+      if (Array.isArray(item.hideLayers)) {
+        for (const layerName of item.hideLayers) hiddenLayers.add(layerName);
+      }
+    }
+    const entries = character.def.base
+      .filter((base) => !hiddenLayers.has(base.layer))
+      .map((base) => ({
+        image: base.image,
+        layer: layerIndex(base.layer),
+        sub: -1,
+        removeWhiteBackground: base.removeWhiteBackground === true,
+        offsetX: base.offsetX ?? 0,
+        offsetY: base.offsetY ?? 0
+      }));
     for (const item of selections.values()) {
       entries.push({
         image: item.image,
         layer: layerIndex(item.layer),
         sub: categoryOrder.get(item.category) ?? 0,
-        removeWhiteBackground: item.removeWhiteBackground === true
+        removeWhiteBackground: item.removeWhiteBackground === true,
+        offsetX: item.offsetX ?? 0,
+        offsetY: item.offsetY ?? 0
       });
     }
     entries.sort((a, b) => a.layer - b.layer || a.sub - b.sub);
@@ -107,7 +119,10 @@ const Renderer = (() => {
       return entry.removeWhiteBackground ? loadCutout(url) : DataLoader.loadImage(url);
     }));
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (const image of images) ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+    images.forEach((image, index) => {
+      const { offsetX, offsetY } = drawList[index];
+      ctx.drawImage(image, offsetX, offsetY, canvas.width, canvas.height);
+    });
   }
 
   return { init, render };
