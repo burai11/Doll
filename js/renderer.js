@@ -37,6 +37,7 @@ const Renderer = (() => {
         offsetY: base.offsetY ?? 0
       }));
     for (const item of selections.values()) {
+      if (hiddenLayers.has(item.layer)) continue;
       entries.push({
         image: item.image,
         layer: layerIndex(item.layer),
