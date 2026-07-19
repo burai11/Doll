@@ -3,5 +3,14 @@
   { "id": "kirie_variant", "name": "Variant", "category": "portrait", "image": "images/kirie_variant.png", "layer": "portrait", "tags": ["variant"] },
   { "id": "bra_black", "name": "Black Bra", "category": "bra", "image": "images/bra_black.jpg", "layer": "underwear", "removeWhiteBackground": true, "tags": ["black"] },
   { "id": "pants_black", "name": "Black Underwear", "category": "pants", "image": "images/pants_black.jpg", "layer": "underwear", "removeWhiteBackground": true, "tags": ["black"] },
-  { "id": "dress_pink", "name": "Pink Dress", "category": "dress", "image": "images/dress_pink.jpg", "layer": "costume", "removeWhiteBackground": true, "tags": ["pink", "dress"] }
+  { "id": "dress_pink", "name": "Pink Dress", "category": "dress", "image": "images/dress_pink.jpg", "layer": "costume", "removeWhiteBackground": true, "tags": ["pink", "dress"] },
+  { "id": "dress_offshoulder_pink", "name": "Off-Shoulder Pink Dress", "category": "dress", "image": "images/dress_offshoulder_pink.png", "layer": "costume", "removeWhiteBackground": true, "tags": ["pink", "dress"] },
+  { "id": "top_maid", "name": "Maid Top", "category": "tops", "image": "images/top_maid.png", "layer": "costume", "removeWhiteBackground": true, "tags": ["maid", "black"] },
+  { "id": "top_sailor", "name": "Sailor Top", "category": "tops", "image": "images/top_sailor.png", "layer": "costume", "tags": ["sailor", "white"] },
+  { "id": "skirt_maid", "name": "Maid Skirt", "category": "skirt", "image": "images/skirt_maid.png", "layer": "costume", "removeWhiteBackground": true, "tags": ["maid", "black"] },
+  { "id": "skirt_navy_chain", "name": "Navy Chain Skirt", "category": "skirt", "image": "images/skirt_navy_chain.png", "layer": "costume", "tags": ["navy", "sailor"] },
+  { "id": "socks_white", "name": "White Socks", "category": "socks", "image": "images/socks_white.png", "layer": "legwear", "removeWhiteBackground": true, "tags": ["white"] },
+  { "id": "socks_black", "name": "Black Socks", "category": "socks", "image": "images/socks_black.png", "layer": "legwear", "tags": ["black"] },
+  { "id": "outer_leather_jacket", "name": "Leather Jacket", "category": "outer", "image": "images/outer_leather_jacket.jpg", "layer": "outerwear", "removeWhiteBackground": true, "tags": ["black", "jacket"], "hideLayers": ["armsFront"], "offsetY": -234 },
+  { "id": "arms_front", "name": "Arms Front", "category": "armOverlay", "image": "images/kirie_arms_front.png", "layer": "armsFront", "removeWhiteBackground": true, "tags": ["arms"] }
 ]

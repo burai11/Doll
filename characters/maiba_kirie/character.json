@@ -2,19 +2,25 @@
   "id": "maiba_kirie",
   "name": "Maiba Kirie",
   "canvas": { "width": 768, "height": 1280 },
-  "layers": ["portrait", "underwear", "costume"],
+  "layers": ["portrait", "underwear", "legwear", "costume", "outerwear", "armsFront"],
   "base": [],
   "categories": [
     { "id": "portrait", "name": "Portrait", "allowNone": false },
     { "id": "bra", "name": "Bra", "allowNone": true },
     { "id": "pants", "name": "Underwear", "allowNone": true },
-    { "id": "dress", "name": "Dress", "allowNone": true }
+    { "id": "socks", "name": "Socks", "allowNone": true },
+    { "id": "skirt", "name": "Skirt", "allowNone": true },
+    { "id": "tops", "name": "Tops", "allowNone": true },
+    { "id": "dress", "name": "Dress", "allowNone": true },
+    { "id": "outer", "name": "Outer", "allowNone": true },
+    { "id": "armOverlay", "name": "Arms", "allowNone": true }
   ],
   "items": "items.json",
   "defaultOutfit": {
     "portrait": "kirie_default",
     "bra": "bra_black",
     "pants": "pants_black",
-    "dress": "dress_pink"
+    "dress": "dress_pink",
+    "armOverlay": "arms_front"
   }
 }
